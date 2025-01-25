@@ -1,0 +1,135 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(90deg, #3498db, #8e44ad);
+  color: #fff;
+  padding: 10px 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  text-align: center;
+  flex: 1;
+}
+
+.burger-menu {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.burger-menu span {
+  background: #fff;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+}
+
+.burger-menu span:nth-child(1) {
+  top: 10px;
+}
+
+.burger-menu span:nth-child(2) {
+  top: 18px;
+}
+
+.burger-menu span:nth-child(3) {
+  top: 26px;
+}
+
+.burger-menu.cross span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 18px;
+}
+
+.burger-menu.cross span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.cross span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 18px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+}
+
+.sidebar {
+  min-height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  position: fixed;
+  z-index: 1040;
+  top: 0;
+  left: 0;
+  width: 250px;
+  background-color: #b6cee6;
+  transform: translateX(-100%);
+  padding-top: 60px;
+}
+
+.sidebar.show {
+  transform: translateX(0);
+}
+
+.content {
+  background: linear-gradient(90deg, #87ceeb, #e6e6fa);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  flex-grow: 1;
+  width: 100%;
+  color: #333;
+}
+
+footer {
+  background: linear-gradient(90deg, #008080, #6a0dad);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  header {
+    justify-content: center;
+  }
+
+  .burger-menu {
+    position: absolute;
+    left: 15px;
+  }
+}

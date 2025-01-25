@@ -1,0 +1,68 @@
+body {
+  background: linear-gradient(to right, #2c3e50, #3498db);
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transform: translateY(100px); /* Posisi awal di luar layar */
+  opacity: 0; /* Tidak terlihat di awal */
+  animation: slideUp 1s ease forwards; /* Animasi geser ke atas */
+}
+
+.card-img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-img-container:hover .card-img-top {
+  transform: scale(1.1); /* Zoom effect */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card-footer {
+  background: #f8f9fa;
+  font-size: 0.85rem;
+}
+
+/* Animasi tulisan Tips Mengurangi Stres */
+h2 {
+  font-size: 2rem;
+  color: #fff;
+  transform: translateX(-100px); /* Posisi awal di luar layar kiri */
+  opacity: 0; /* Tidak terlihat di awal */
+  animation: slideInLeft 1s ease forwards;
+}
+
+/* Keyframes untuk animasi */
+@keyframes slideUp {
+  to {
+    transform: translateY(0); /* Kembali ke posisi normal */
+    opacity: 1; /* Menjadi terlihat */
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    transform: translateX(0); /* Kembali ke posisi normal */
+    opacity: 1; /* Menjadi terlihat */
+  }
+}

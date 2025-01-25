@@ -1,0 +1,106 @@
+{% extends "base.html" %} {% block title %} Data Hasil Cek {% endblock %} {%
+block content %}
+<div class="container mt-5 slide-in">
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+  messages %}
+  <div class="container mb-3">
+    {% for category, message in messages %}
+    <div
+      class="alert alert-{{ category }} alert-dismissible fade show"
+      role="alert"
+      id="flash-message"
+    >
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %} {% endwith %}
+
+  <div class="card shadow-lg rounded-4 border-0">
+    <div class="card-header text-center py-4 rounded-top">
+      <h1 class="fw-bold">Data Hasil Cek</h1>
+      <p class="mb-0">Detail hasil cek tingkat stres berdasarkan input Anda</p>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table
+          class="table table-hover table-bordered align-middle text-center"
+        >
+          <thead class="bg-primary text-white">
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>Tingkat Kecemasan</th>
+              <th>Depresi</th>
+              <th>Kualitas Tidur</th>
+              <th>Beban Studi</th>
+              <th>Kekhawatiran Karir</th>
+              <th>Tekanan Teman</th>
+              <th>Perundungan</th>
+              <th>Tingkat Stres</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for data in hasil_cek %}
+            <tr class="table-light">
+              <td>{{ loop.index }}</td>
+              <td class="fw-bold text-start">{{ data[1] }}</td>
+              <td>{{ data[2] }}</td>
+              <td>{{ data[3] }}</td>
+              <td>{{ data[4] }}</td>
+              <td>{{ data[5] }}</td>
+              <td>{{ data[6] }}</td>
+              <td>{{ data[7] }}</td>
+              <td>{{ data[8] }}</td>
+              <td class="fw-bold">
+                {% if data[9] == 'rendah' %}
+                <span class="badge bg-success px-3 py-2">{{ data[9] }}</span>
+                {% elif data[9] == 'sedang' %}
+                <span class="badge bg-warning text-dark px-3 py-2"
+                  >{{ data[9] }}</span
+                >
+                {% elif data[9] == 'tinggi' %}
+                <span class="badge bg-danger px-3 py-2">{{ data[9] }}</span>
+                {% else %} {{ data[9] }} {% endif %}
+              </td>
+              <td>
+                <form
+                  action="/delete-result/{{ data[0] }}"
+                  method="post"
+                  onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');"
+                >
+                  <button type="submit" class="btn btn-danger btn-sm">
+                    Hapus
+                  </button>
+                </form>
+              </td>
+            </tr>
+            {% else %}
+            <tr>
+              <td colspan="11" class="text-center">
+                Tidak ada data hasil cek.
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="/export-csv" class="btn btn-success btn-lg px-5 me-3"
+          >Unduh Data CSV</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" href="../static/css/data_hasil_cek.css" />
+<script src="../static/js/data_hasil_cek.js"></script>
+{% endblock %}

@@ -1,0 +1,143 @@
+/* Animasi keyframes */
+/* Definisi animasi untuk efek masuk elemen dari kiri ke kanan */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(
+      -100%
+    ); /* Mulai dari posisi di luar layar sebelah kiri */
+    opacity: 0; /* Mulai dengan elemen tidak terlihat */
+  }
+  to {
+    transform: translateX(0); /* Elemen bergerak ke posisi semula */
+    opacity: 1; /* Elemen menjadi sepenuhnya terlihat */
+  }
+}
+
+/* Animasi untuk kartu dengan efek masuk dari kiri */
+.animated-card {
+  animation: slideInFromLeft 0.8s ease-out; /* Gunakan animasi slideInFromLeft selama 0.8 detik dengan kecepatan easing */
+}
+
+/* Animasi untuk teks dengan efek masuk dari kiri */
+.animated-text {
+  animation: slideInFromLeft 1s ease-out; /* Gunakan animasi slideInFromLeft selama 1 detik */
+}
+
+/* Teks dengan efek gradien warna */
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    #3498db,
+    #8e44ad
+  ); /* Gradien horizontal dari biru ke ungu */
+  background-clip: text; /* Terapkan gradien hanya pada teks */
+  -webkit-background-clip: text; /* Kompatibilitas untuk browser berbasis WebKit */
+  -webkit-text-fill-color: transparent; /* Isi teks menjadi transparan sehingga gradien terlihat */
+  color: transparent; /* Teks default transparan */
+  font-weight: bold; /* Tebalkan teks */
+}
+
+/* Latar belakang gradien untuk halaman */
+body {
+  background: linear-gradient(
+    to right,
+    #2c3e50,
+    #3498db
+  ); /* Gradien dari abu-abu gelap ke biru */
+  animation: bgColorChange 8s infinite; /* Animasi perubahan warna latar belakang setiap 8 detik, berulang tanpa batas */
+}
+
+/* Tombol dengan efek gradien */
+.btn-gradient {
+  background: linear-gradient(
+    45deg,
+    #1abc9c,
+    #3498db
+  ); /* Gradien diagonal dari hijau ke biru */
+  color: white; /* Teks tombol berwarna putih */
+  border: none; /* Hilangkan border tombol */
+  transition: transform 0.2s, box-shadow 0.2s; /* Transisi halus untuk efek hover */
+}
+
+/* Efek hover untuk tombol gradien */
+.btn-gradient:hover {
+  transform: scale(1.05); /* Perbesar tombol sedikit saat dihover */
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.5); /* Tambahkan bayangan pada tombol */
+}
+
+/* Kontainer untuk stress meter (gauge) */
+.stress-meter-container {
+  width: 300px; /* Lebar gauge */
+  height: 150px; /* Tinggi gauge (setengah lingkaran) */
+  margin: 0 auto; /* Posisikan di tengah secara horizontal */
+  position: relative; /* Posisikan relatif untuk elemen di dalamnya */
+}
+
+/* Desain dasar gauge */
+.gauge {
+  position: relative; /* Relatif untuk elemen jarum */
+  width: 100%; /* Lebar penuh kontainer */
+  height: 100%; /* Tinggi penuh kontainer */
+  background: conic-gradient(
+    green 0% 33%,
+    yellow 33% 66%,
+    red 66% 100%
+  ); /* Gradien berbentuk lingkaran penuh untuk tiga warna */
+  border-radius: 100% 100% 0 0; /* Bentuk setengah lingkaran di bagian atas */
+  overflow: hidden; /* Potong elemen yang melampaui batas gauge */
+}
+
+/* Jarum indikator di gauge */
+.needle {
+  position: absolute; /* Posisi absolut agar dapat diputar */
+  bottom: 0; /* Letakkan di dasar gauge */
+  left: 50%; /* Posisikan di tengah horizontal */
+  width: 2px; /* Lebar jarum */
+  height: 100px; /* Panjang jarum */
+  background: black; /* Warna jarum hitam */
+  transform-origin: bottom; /* Titik rotasi di dasar jarum */
+  transition: transform 0.3s ease-out; /* Animasi transisi rotasi */
+}
+
+/* Kelas untuk rotasi jarum berdasarkan tingkat stres */
+.low-stress {
+  transform: rotate(-90deg); /* Rotasi jarum ke kiri (rendah) */
+}
+
+.medium-stress {
+  transform: rotate(0deg); /* Rotasi jarum ke tengah (sedang) */
+}
+
+.high-stress {
+  transform: rotate(90deg); /* Rotasi jarum ke kanan (tinggi) */
+}
+
+/* Pusat gauge */
+.gauge-center {
+  position: absolute; /* Posisi absolut di atas jarum */
+  bottom: 0; /* Letakkan di dasar gauge */
+  left: 50%; /* Posisikan di tengah horizontal */
+  width: 20px; /* Lebar lingkaran pusat */
+  height: 20px; /* Tinggi lingkaran pusat */
+  background: white; /* Warna lingkaran putih */
+  border-radius: 50%; /* Bentuk lingkaran */
+  transform: translateX(-50%); /* Pusatkan secara horizontal */
+}
+
+/* Label pada gauge */
+.gauge-label {
+  position: absolute; /* Posisi absolut untuk penempatan spesifik */
+  bottom: 5px; /* Dekat dasar gauge */
+  font-size: 12px; /* Ukuran font kecil */
+  font-weight: bold; /* Tebalkan teks */
+}
+
+/* Label untuk "Min" */
+.min-label {
+  left: 10%; /* Posisi di dekat sisi kiri */
+}
+
+/* Label untuk "Max" */
+.max-label {
+  right: 10%; /* Posisi di dekat sisi kanan */
+}

@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% block content %}
+<link rel="stylesheet" href="/static/css/meditasi.css" />
+<div class="container my-5 slide-in">
+  <h1 class="text-center mb-4">Manfaat Meditasi dan Yoga</h1>
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img
+        src="/static/images/stress_tips/yoga.png"
+        class="img-fluid hover-scale"
+        alt="Meditasi dan Yoga"
+      />
+    </div>
+    <div class="col-md-6">
+      <p>
+        Meditasi dan yoga membantu mengurangi stres, menenangkan pikiran, dan
+        meningkatkan fokus. Praktik pernapasan yang teratur juga dapat
+        memberikan efek menenangkan.
+      </p>
+      <p>Berikut adalah beberapa manfaat meditasi:</p>
+      <ul class="highlight-list">
+        <li>Meningkatkan kesadaran diri.</li>
+        <li>Meningkatkan konsentrasi dan fokus.</li>
+        <li>Mengurangi stres dan kecemasan.</li>
+        <li>Meningkatkan kualitas tidur.</li>
+      </ul>
+      <p>
+        Cobalah meditasi 10 menit setiap hari untuk meningkatkan kesehatan
+        mental Anda.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  body {
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    animation: bgColorChange 8s infinite;
+  }
+
+  /* Animasi slide-in dari bawah ke atas */
+  .slide-in {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1s ease-out forwards;
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .highlight-list li {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+</style>
+<script src="/static/js/meditasi.js"></script>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "base.html" %} {% block content %}
+<link rel="stylesheet" href="/static/css/stress_tips.css" />
+
+<div class="container my-5">
+  <h2 class="text-center mb-4">Tips Mengurangi Stres</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Tip 1 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-img-container">
+          <img
+            src="/static/images/stress_tips/olahraga.png"
+            class="card-img-top"
+            alt="Berolahraga"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Berolahraga Secara Rutin</h5>
+          <p class="card-text">
+            Olahraga membantu tubuh melepaskan endorfin, hormon yang dapat
+            meningkatkan suasana hati.
+          </p>
+          <a href="olahraga" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+    <!-- Tip 2 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-img-container">
+          <img
+            src="/static/images/stress_tips/yoga.png"
+            class="card-img-top"
+            alt="Meditasi"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Meditasi atau Yoga</h5>
+          <p class="card-text">
+            Latihan pernapasan dan yoga dapat membantu menenangkan pikiran dan
+            mengurangi stres.
+          </p>
+          <a href="meditasi" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+    <!-- Tip 3 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-img-container">
+          <img
+            src="/static/images/stress_tips/tidur.png"
+            class="card-img-top"
+            alt="Pola Tidur"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Jaga Pola Tidur</h5>
+          <p class="card-text">
+            Tidur yang cukup penting untuk menjaga keseimbangan emosi dan
+            mengurangi kecemasan.
+          </p>
+          <a href="jaga_pola_tidur" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+    <!-- Tip 4 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-img-container">
+          <img
+            src="/static/images/stress_tips/berkumpul_dengan_keluarga.png"
+            class="card-img-top"
+            alt="Berkumpul"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Berkumpul dengan Teman atau Keluarga</h5>
+          <p class="card-text">
+            Interaksi sosial yang positif dapat membantu mengurangi stres dan
+            meningkatkan kebahagiaan.
+          </p>
+          <a
+            href="berkumpul_dengan_teman_dan_keluarga"
+            class="stretched-link"
+          ></a>
+        </div>
+      </div>
+    </div>
+    <!-- Tip 5 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-img-container">
+          <img
+            src="/static/images/stress_tips/multitasking.png"
+            class="card-img-top"
+            alt="Hindari Multitasking"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Hindari Multitasking</h5>
+          <p class="card-text">
+            Fokus pada satu tugas pada satu waktu dapat mengurangi tekanan dan
+            meningkatkan efisiensi.
+          </p>
+          <a href="multitasking" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/static/js/stress_tips.js"></script>
+
+{% endblock %}

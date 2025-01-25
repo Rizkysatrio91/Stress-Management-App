@@ -1,0 +1,71 @@
+{% extends "base.html" %} {% block content %}
+<link rel="stylesheet" href="/static/css/jaga_pola_tidur.css" />
+<div class="container my-5 slide-in">
+  <h1 class="text-center mb-4">Pentingnya Pola Tidur yang Teratur</h1>
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img
+        src="/static/images/stress_tips/tidur.png"
+        class="img-fluid hover-scale"
+        alt="Jaga Pola Tidur"
+      />
+    </div>
+    <div class="col-md-6">
+      <p>
+        Pola tidur yang teratur sangat penting untuk menjaga kesehatan fisik dan
+        mental. Tidur yang cukup membantu tubuh memulihkan energi, meningkatkan
+        konsentrasi, dan menjaga keseimbangan emosi.
+      </p>
+      <p>Berikut adalah beberapa manfaat tidur yang teratur:</p>
+      <ul class="highlight-list">
+        <li>Meningkatkan daya tahan tubuh.</li>
+        <li>Memperbaiki suasana hati dan mengurangi stres.</li>
+        <li>Meningkatkan fokus dan produktivitas.</li>
+        <li>
+          Mengurangi risiko penyakit kronis seperti hipertensi dan diabetes.
+        </li>
+      </ul>
+      <p>
+        Usahakan untuk tidur 7-8 jam setiap malam dan buat rutinitas tidur yang
+        konsisten. Hindari penggunaan perangkat elektronik sebelum tidur untuk
+        mendapatkan kualitas tidur yang optimal.
+      </p>
+    </div>
+  </div>
+</div>
+<style>
+  body {
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    animation: bgColorChange 8s infinite;
+  }
+
+  /* Animasi slide-in dari bawah ke atas */
+  .slide-in {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1s ease-out forwards;
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .highlight-list li {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+</style>
+<script src="/static/js/jaga_pola_tidur.js"></script>
+{% endblock %}

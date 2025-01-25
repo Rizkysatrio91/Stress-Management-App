@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block content %}
+<link rel="stylesheet" href="/static/css/multitasking.css" />
+<div class="container my-5 slide-in">
+  <h1 class="text-center mb-4">Mengapa Harus Menghindari Multitasking?</h1>
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img
+        src="/static/images/stress_tips/multitasking.png"
+        class="img-fluid hover-scale"
+        alt="Hindari Multitasking"
+      />
+    </div>
+    <div class="col-md-6">
+      <p>
+        Multitasking sering dianggap sebagai cara untuk menyelesaikan banyak hal
+        secara bersamaan. Namun, pada kenyataannya, multitasking dapat
+        meningkatkan stres, mengurangi produktivitas, dan memperburuk kualitas
+        kerja.
+      </p>
+      <p>Berikut adalah alasan mengapa multitasking harus dihindari:</p>
+      <ul class="highlight-list">
+        <li>Meningkatkan risiko kesalahan.</li>
+        <li>Menurunkan kualitas pekerjaan.</li>
+        <li>Menambah beban mental dan emosional.</li>
+        <li>Mengurangi fokus pada tugas utama.</li>
+      </ul>
+      <p>
+        Fokuslah pada satu tugas pada satu waktu. Buat daftar prioritas dan
+        selesaikan tugas secara bertahap untuk meningkatkan efisiensi dan
+        mengurangi tekanan.
+      </p>
+    </div>
+  </div>
+</div>
+<style>
+  body {
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    animation: bgColorChange 8s infinite;
+  }
+</style>
+<script src="/static/js/multitasking.js"></script>
+{% endblock %}

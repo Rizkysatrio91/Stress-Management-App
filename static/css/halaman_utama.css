@@ -1,0 +1,186 @@
+/* Keyframes for text entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for image floating */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for button pulse */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #4facfe,
+    #a64ff4
+  ); /* Blue to Purple Gradient */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Container Styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  gap: 20px;
+}
+
+/* Card Styling */
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Characters Styling */
+.character {
+  width: 250px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Button Styling */
+.btn-masuk {
+  background: linear-gradient(
+    90deg,
+    #56ab2f,
+    #a8e063
+  ); /* Elegant Green Gradient */
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-masuk:hover {
+  background: linear-gradient(
+    90deg,
+    #a8e063,
+    #56ab2f
+  ); /* Reverse Elegant Green Gradient */
+  box-shadow: 0 10px 25px rgba(86, 171, 47, 0.6);
+  transform: scale(1.1);
+}
+
+/* Apply Animations */
+.card h1,
+.card h2 {
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.btn-masuk {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .card h1 {
+    font-size: 2rem;
+  }
+
+  .card h2 {
+    font-size: 1.5rem;
+  }
+
+  .character {
+    width: 200px;
+  }
+
+  .btn-masuk {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 30px 20px;
+  }
+
+  .card h1 {
+    font-size: 1.8rem;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+  }
+
+  .character {
+    width: 150px;
+  }
+
+  .btn-masuk {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}

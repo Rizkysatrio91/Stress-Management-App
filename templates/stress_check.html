@@ -1,0 +1,94 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <div class="text-center mb-4 animated-text">
+    <h1 class="fw-bold text-gradient">Cek Tingkat Stress</h1>
+    <p class="text-muted fs-5">
+      Isi form berikut untuk mengetahui tingkat stres Anda dengan cepat dan
+      mudah.
+    </p>
+  </div>
+
+  <!-- Form untuk cek tingkat stres -->
+  <form
+    method="POST"
+    action="/stress-check"
+    class="card p-5 shadow-lg rounded-4 border-0 animated-card"
+  >
+    <!-- Input: Nama -->
+    <div class="mb-4">
+      <label for="name" class="form-label fw-bold text-secondary">
+        Nama Mahasiswa
+      </label>
+      <input
+        type="text"
+        class="form-control rounded-pill"
+        id="name"
+        name="name"
+        placeholder="Masukkan nama Anda (opsional)"
+      />
+    </div>
+
+    <!-- Input: Dynamic features -->
+    {% for feature, label in [ ('anxiety_level', 'Tingkat Kecemasan'),
+    ('depression', 'Depresi'), ('sleep_quality', 'Kualitas Tidur'),
+    ('study_load', 'Beban Studi'), ('future_career_concerns', 'Kekhawatiran
+    Karir di Masa Depan'), ('peer_pressure', 'Tekanan Rekan Sejawat'),
+    ('bullying', 'Perundungan') ] %}
+    <div class="mb-4">
+      <label for="{{ feature }}" class="form-label fw-bold text-secondary">
+        {{ label }}
+      </label>
+      <select
+        class="form-control rounded-pill"
+        id="{{ feature }}"
+        name="{{ feature }}"
+        required
+      >
+        <option value="" disabled selected>Pilih tingkat</option>
+        <option value="0">Rendah</option>
+        <option value="1">Sedang</option>
+        <option value="2">Tinggi</option>
+      </select>
+    </div>
+    {% endfor %}
+
+    <!-- Tombol Submit -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-gradient btn-lg px-5 py-2">
+        Periksa Tingkat Stres
+      </button>
+    </div>
+  </form>
+
+  <!-- Tampilan: Hasil tingkat stres -->
+  {% if result is not none %}
+  <div class="mt-5 text-center">
+    <h3 class="fw-bold">
+      Tingkat Stres Anda: <span class="text-gradient">{{ result }}</span>
+    </h3>
+    <p class="text-secondary">
+      Nama Mahasiswa: <strong>{{ student_name }}</strong>
+    </p>
+    <!-- Gauge Meter -->
+    <div class="stress-meter-container mt-4 position-relative">
+      <div class="gauge">
+        <div class="needle {{ needle_class }}"></div>
+        <div class="gauge-center"></div>
+        <div class="gauge-label min-label">Min</div>
+        <div class="gauge-label max-label">Max</div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Tampilan: Pesan error -->
+  {% if error_message is not none %}
+  <div class="alert alert-danger mt-4 rounded-4 shadow">
+    <strong>Kesalahan:</strong> {{ error_message }}
+  </div>
+  {% endif %}
+</div>
+
+<link rel="stylesheet" href="../static/css/stress_check.css" />
+<script src="../static/js/stress_check.js"></script>
+{% endblock %}

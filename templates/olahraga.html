@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block content %}
+<link rel="stylesheet" href="/static/css/olahraga.css" />
+<div class="container my-5 slide-in">
+  <h1 class="text-center mb-4">Manfaat Berolahraga Secara Rutin</h1>
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img
+        src="/static/images/stress_tips/olahraga.png"
+        class="img-fluid hover-scale"
+        alt="Berolahraga"
+      />
+    </div>
+    <div class="col-md-6">
+      <p>
+        Berolahraga secara rutin tidak hanya bermanfaat untuk kesehatan fisik,
+        tetapi juga membantu kesehatan mental. Saat berolahraga, tubuh akan
+        melepaskan hormon endorfin yang dapat meningkatkan suasana hati dan
+        mengurangi stres.
+      </p>
+      <p>Berikut adalah beberapa manfaat olahraga yang rutin:</p>
+      <ul class="highlight-list">
+        <li>Meningkatkan kualitas tidur.</li>
+        <li>Menurunkan tingkat kecemasan dan depresi.</li>
+        <li>Meningkatkan energi dan fokus sepanjang hari.</li>
+        <li>Memperkuat hubungan sosial saat dilakukan bersama teman.</li>
+      </ul>
+      <p>
+        Mulailah dengan aktivitas sederhana seperti berjalan kaki, berlari, atau
+        bersepeda. Konsistensi adalah kunci untuk mendapatkan manfaat optimal.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  body {
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    animation: bgColorChange 8s infinite;
+  }
+</style>
+<script src="/static/js/olahraga.js"></script>
+{% endblock %}

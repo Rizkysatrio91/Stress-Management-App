@@ -1,0 +1,85 @@
+body {
+  background: linear-gradient(to right, #2c3e50, #3498db);
+  animation: bgColorChange 8s infinite;
+}
+
+/* Animasi slide-in dari bawah ke atas */
+.slide-in {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f0f8ff;
+}
+
+.badge {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+.btn {
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.85rem;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+  .card-header h1 {
+    font-size: 1.5rem;
+  }
+  .card-header p {
+    font-size: 0.9rem;
+  }
+}
+
+#flash-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+  animation: fade-in-out 5s ease-in-out forwards;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}

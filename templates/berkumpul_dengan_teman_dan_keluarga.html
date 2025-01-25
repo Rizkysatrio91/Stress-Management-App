@@ -1,0 +1,74 @@
+{% extends "base.html" %} {% block content %}
+<link
+  rel="stylesheet"
+  href="/static/css/berkumpul_dengan_teman_dan_keluarga.css"
+/>
+<div class="container my-5 slide-in">
+  <h1 class="text-center mb-4">Manfaat Berkumpul dengan Teman dan Keluarga</h1>
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img
+        src="/static/images/stress_tips/berkumpul_dengan_keluarga.png"
+        class="img-fluid hover-scale"
+        alt="Berkumpul dengan Teman dan Keluarga"
+      />
+    </div>
+    <div class="col-md-6">
+      <p>
+        Interaksi sosial yang positif dengan teman dan keluarga memiliki dampak
+        besar pada kesehatan mental. Berkumpul bersama mereka dapat meningkatkan
+        kebahagiaan, mengurangi stres, dan memperkuat hubungan emosional.
+      </p>
+      <p>
+        Berikut adalah beberapa manfaat berkumpul dengan teman dan keluarga:
+      </p>
+      <ul class="highlight-list">
+        <li>Meningkatkan rasa kebersamaan dan dukungan emosional.</li>
+        <li>Mengurangi rasa kesepian dan isolasi.</li>
+        <li>Memperkuat hubungan interpersonal.</li>
+        <li>Memberikan rasa aman dan kebahagiaan.</li>
+      </ul>
+      <p>
+        Luangkan waktu untuk berbicara, bermain, atau makan bersama teman dan
+        keluarga. Aktivitas sederhana seperti ini dapat membantu meningkatkan
+        kualitas hidup Anda.
+      </p>
+    </div>
+  </div>
+</div>
+<style>
+  body {
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    animation: bgColorChange 8s infinite;
+  }
+
+  /* Animasi slide-in dari bawah ke atas */
+  .slide-in {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1s ease-out forwards;
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .highlight-list li {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+</style>
+<script src="/static/js/berkumpul_dengan_teman_dan_keluarga.js"></script>
+{% endblock %}
